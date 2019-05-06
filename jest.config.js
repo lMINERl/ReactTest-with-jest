@@ -2,6 +2,7 @@
 // https://jestjs.io/docs/en/configuration.html
 
 module.exports = {
+  // "name": "react-test-with-jest",
   // All imported modules in your tests should be mocked automatically
   // automock: false,
 
@@ -76,7 +77,9 @@ module.exports = {
   // ],
 
   // A map from regular expressions to module names that allow to stub out resources with a single module
-  // moduleNameMapper: {},
+  // moduleNameMapper: {
+  //   '^@/(.*)$': '<rootDir>/src/$1'
+  // },
 
   // An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader
   // modulePathIgnorePatterns: [],
@@ -140,12 +143,15 @@ module.exports = {
   // The glob patterns Jest uses to detect test files
   // testMatch: [
   //   "**/__tests__/**/*.[jt]s?(x)",
-  //   "**/?(*.)+(spec|test).[tj]s?(x)"
+  //   "**/?(*.)+(spec|test).[tj]s?(x)",
+    // '<rootDir>/(tests/unit/**/*.spec.(js|jsx|ts|tsx)|**/__tests__/*.(js|jsx|ts|tsx))'
   // ],
 
   // An array of regexp pattern strings that are matched against all test paths, matched tests are skipped
   // testPathIgnorePatterns: [
-  //   "\\\\node_modules\\\\"
+  //   "\\\\node_modules\\\\",
+  //   '<rootDir>/node_modules/',
+  //   '/node_modules/'
   // ],
 
   // The regexp pattern or array of patterns that Jest uses to detect test files
@@ -164,18 +170,23 @@ module.exports = {
   // timers: "real",
 
   // A map from regular expressions to paths to transformers
-  // transform: null,
+  transform: {
+    // '^.+\\.vue$': 'vue-jest',
+    // '.+\\.(css|styl|less|sass|scss|png|jpg|ttf|woff|woff2)$':
+    //   'jest-transform-stub',
+    '^.+\\.(js|jsx)?$': 'babel-jest'
+  },
 
   // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
-  // transformIgnorePatterns: [
-  //   "\\\\node_modules\\\\"
-  // ],
+  transformIgnorePatterns: [
+    "\\\\node_modules\\\\"
+  ],
 
   // An array of regexp pattern strings that are matched against all modules before the module loader will automatically return a mock for them
   // unmockedModulePathPatterns: undefined,
 
   // Indicates whether each individual test should be reported during the run
-  // verbose: null,
+  verbose: true
 
   // An array of regexp patterns that are matched against all source file paths before re-running tests in watch mode
   // watchPathIgnorePatterns: [],
