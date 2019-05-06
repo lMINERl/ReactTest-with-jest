@@ -7,6 +7,6 @@ make testable components with react using jest
 git clone git@github.com:lMINERl/ReactTest-with-jest.git
 cd ReactTest-with-jest
 npm install
-npm run jest-test
+npm run jest-test or npm run react-test
 
 ```
