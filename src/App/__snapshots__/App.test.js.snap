@@ -2,7 +2,36 @@
 
 exports[`app component doesnt have sections 1`] = `false`;
 
-exports[`app component doesnt have sections 2`] = `ShallowWrapper {}`;
+exports[`app component doesnt have sections 2`] = `
+<div
+  className="App"
+>
+  <header
+    className="App-header"
+  >
+    <img
+      alt="logo"
+      className="App-logo"
+      src="logo.svg"
+    />
+    <p>
+      Edit 
+      <code>
+        src/App.js
+      </code>
+       and save to reload.
+    </p>
+    <a
+      className="App-link"
+      href="https://reactjs.org"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      Learn React
+    </a>
+  </header>
+</div>
+`;
 
 exports[`app component doesnt have sections: app has section 1`] = `false`;
 

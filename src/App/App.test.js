@@ -5,7 +5,8 @@ import renderer from 'react-test-renderer';
 
 import { configure, shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-
+import enzymeSerializer from 'enzyme-to-json/serializer';
+expect.addSnapshotSerializer(enzymeSerializer);
 configure({ adapter: new Adapter() });
 
 it('renders without crashing', () => {
@@ -36,9 +37,11 @@ describe('app component', () => {
     expect(wrapper.contains(<section />)).toMatchSnapshot(
       false
     );
-
-    // snapshot to dom
+    // snapshot to dom using enzymeSerializer
     expect(wrapper).toMatchSnapshot();
+
+    
+
   });
 
   it('does have logo', () => {
