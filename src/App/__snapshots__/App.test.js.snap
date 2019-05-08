@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`app component doesnt have sections 1`] = `false`;
+
+exports[`app component doesnt have sections 2`] = `ShallowWrapper {}`;
+
+exports[`app component doesnt have sections: app has section 1`] = `false`;
+
+exports[`just a fake test fake test 1`] = `
+<div>
+  memory component
+</div>
+`;
